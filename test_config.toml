@@ -1,0 +1,73 @@
+# Hlavní konfigurační soubor pro testování baterie
+
+[general]
+# Cesta k sériovému portu DUT (např. /dev/ttyACM0 nebo COM3)
+dut_serial_port = "/dev/ttyACM0"
+# Adresář pro ukládání výsledných CSV souborů
+output_directory = "test_results"
+# Interval logování dat v sekundách
+log_interval_seconds = 1
+# Povolit simulaci DUT? true = simulace, false = reálné DUT
+simulate_dut = true
+
+[relay]
+# IP adresa Deditec relé desky
+ip_address = "192.168.1.10" # <-- ZMĚŇ NA SKUTEČNOU IP!
+# Číslo relé (1-16), které spíná USB +5V VBUS
+usb_power_relay_pin = 1
+# Číslo relé (1-16), které spíná HW enable nabíječky (volitelné)
+charger_enable_relay_pin = 2
+# Číslo relé (1-16) připojeného k bzučáku (volitelné)
+beeper_pin = 8
+
+[temperature_chamber]
+# Povolit automatické ovládání komory? false = manuální režim s čekáním na Enter
+enabled = false
+# Timeout [s] pro čekání na stabilizaci teploty (použito jen pokud enabled = true)
+stabilization_timeout_seconds = 1800
+# Zde přidej specifická nastavení pro tvou komoru, pokud enabled = true
+# např. connection_string = "GPIB0::1::INSTR"
+
+[test_plan]
+# Teploty [°C], při kterých se mají testy provést
+temperatures_celsius = [25, 0] # Příklad: 25°C a 0°C
+# Počet kompletních nabíjecích/vybíjecích cyklů pro každou teplotu
+cycles_per_temperature = 1
+# Cílové napětí [V] pro ukončení fáze vybíjení
+discharge_voltage_limit = 3.0
+# Prah proudu [mA], pod který musí klesnout pro detekci konce nabíjení (IDLE)
+charge_idle_current_threshold_ma = 50
+# Délka relaxačních pauz [s] (např. 3600 = 1 hodina)
+relaxation_time_seconds = 10 # Krátká relaxace pro rychlejší testování
+
+[dut_commands]
+# !!! UPRAV PODLE SVÉHO DUT !!!
+# Příkazy posílané do DUT přes sériový port (prodtest_cli)
+
+# Základní ovládání a čtení
+enable_charging = "charger enable"
+disable_charging = "charger disable"
+get_voltage = "battery voltage?"
+get_current = "battery current?"
+get_status = "system status?" # Očekává se odpověď obsahující CHARGING/DISCHARGING/IDLE
+
+# Příkazy pro další data (podle formátu)
+get_dut_time = "system time?"           # Očekává čas v ms
+get_ntc_temp = "temp ntc?"              # Očekává teplotu NTC v °C
+get_vsys = "system vsys?"               # Očekává napětí Vsys v V
+get_die_temp = "temp chip?"             # Očekává teplotu čipu v °C
+get_iba_meas_status = "charger ibastat?" # Očekává stav měření proudu
+get_buck_status = "charger buckstat?"    # Očekává stav buck
+
+[notifications]
+# Metoda upozornění pro manuální krok teploty: "beeper", "whatsapp", "both", "none"
+manual_temp_mode = "whatsapp"  # Výchozí je pípání
+
+# Nastavení pro WhatsApp (vyplň, pokud používáš "whatsapp" nebo "both")
+# Tvé tel. číslo včetně mezinárodní předvolby (např. "+420123456789")
+whatsapp_phone_number = "+420733729931"
+# Tvůj API klíč z CallMeBot.com (!!! NEUKLÁDEJ DO VEŘEJNÉHO GITU !!!)
+whatsapp_apikey = "9647101"
+
+# Volitelně: Nastavení vybíjecího proudu (pokud podporováno)
+# set_discharge_current = "battery discharge {current_ma}"

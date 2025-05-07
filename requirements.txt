@@ -1,0 +1,33 @@
+# requirements.txt
+
+# Core data analysis, manipulation, and scientific computing
+pandas
+numpy
+scipy
+
+# Plotting and visualization
+matplotlib
+
+# Configuration file parsing (TOML)
+toml
+
+# Serial port communication
+pyserial
+
+# Command-line argument completion enhancement
+argcomplete
+
+# HID device communication (pro ft260q.py - pokud stále relevantní)
+# hidapi # Může vyžadovat systémové závislosti
+
+# Required by Deditec driver code for type hinting (Self)
+typing-extensions
+
+# Required by Deditec test script
+click
+
+# For sending HTTP requests (e.g., WhatsApp API)
+requests
+
+# Pro ovládání přístrojů přes VISA (pokud bude implementováno)
+# pyvisa

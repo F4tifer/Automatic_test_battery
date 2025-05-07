@@ -1,0 +1,140 @@
+2025-05-06 14:55:17,895 - INFO - Loading configuration from: /Users/marekmarik/Desktop/Automatic_battery_test/test_config.toml
+2025-05-06 14:55:17,895 - INFO - Configuration loaded successfully.
+2025-05-06 14:55:17,896 - INFO - Initializing hardware controllers...
+2025-05-06 14:55:17,896 - INFO - Initializing Relay Controller for Deditec at 192.168.1.10:9912
+2025-05-06 14:55:17,896 - INFO - Temperature Chamber Controller Initialized (Manual Mode).
+2025-05-06 14:55:17,896 - INFO - Manual Temp Notification Mode selected: 'whatsapp'
+2025-05-06 14:55:17,896 - INFO - WhatsApp notification is configured and available.
+2025-05-06 14:55:17,898 - INFO - Initializing Dummy DUT Controller...
+2025-05-06 14:55:17,898 - INFO - Dummy DUT Controller Initialized and simulation thread started.
+2025-05-06 14:55:17,898 - WARNING - <<<<< RUNNING IN DUT SIMULATION MODE >>>>>
+2025-05-06 14:55:17,898 - INFO - --- Starting Peripheral Checks ---
+2025-05-06 14:55:17,898 - INFO - Pinging 192.168.1.10...
+2025-05-06 14:55:17,903 - INFO - Ping to 192.168.1.10 successful.
+2025-05-06 14:55:17,903 - INFO - Checking Deditec connection to 192.168.1.10:9912 (timeout=2s)...
+2025-05-06 14:55:17,905 - INFO - Deditec connection successful.
+2025-05-06 14:55:17,905 - INFO - DUT is in simulation mode.
+2025-05-06 14:55:17,905 - INFO - Temperature Chamber control is disabled or in manual mode.
+2025-05-06 14:55:17,905 - INFO - --- Peripheral Checks Passed ---
+2025-05-06 14:55:17,905 - INFO - Test results will be saved in: /Users/marekmarik/Desktop/Automatic_battery_test/test_results
+2025-05-06 14:55:17,905 - INFO - Test plan: 2 temperatures, 1 cycles each. Total cycles: 2
+2025-05-06 14:55:17,905 - INFO - DUT Simulation Mode: ENABLED
+2025-05-06 14:55:17,905 - INFO - Temperature Control: MANUAL
+2025-05-06 14:55:17,905 - INFO - ===== Processing Temperature: 25°C =====
+2025-05-06 14:55:17,905 - INFO - --- STEP 1: Setting Target Temperature to 25°C ---
+2025-05-06 14:55:17,905 - INFO - --- MANUAL MODE: Target temperature set to 25.0°C ---
+2025-05-06 14:55:17,905 - INFO - Target temperature set instruction sent/logged.
+2025-05-06 14:55:17,905 - INFO - --- Starting Cycle 1/1 for 25°C ---
+2025-05-06 14:55:17,905 - INFO - --- Starting Test Cycle 1 at 25°C ---
+2025-05-06 14:55:17,905 - INFO - Starting data logger for the cycle...
+2025-05-06 14:55:17,905 - INFO - DataLogger: Starting logging to test_results/_temp_25C_cycle1_full.csv every 1.0s
+2025-05-06 14:55:17,905 - INFO - Verifying/Setting temperature...
+2025-05-06 14:55:17,905 - INFO - Sending WhatsApp notification for manual action...
+2025-05-06 14:55:17,905 - WARNING - Using hardcoded URL for WhatsApp notification.
+2025-05-06 14:55:17,905 - INFO - Attempting to open hardcoded WhatsApp URL in browser...
+2025-05-06 14:55:18,015 - INFO - Browser command executed to open hardcoded WhatsApp URL.
+2025-05-06 14:55:18,015 - INFO - WhatsApp notification request sent.
+2025-05-06 14:56:02,403 - INFO - Continuing test based on manual confirmation.
+2025-05-06 14:56:02,404 - INFO - --- STEP 2 (Pre-Discharge): Relaxing for 0.0 hour(s) (10 seconds) ---
+2025-05-06 14:56:02,404 - INFO - Relaxation started. Ends at 14:56:12
+2025-05-06 14:56:12,409 - INFO - Relaxation complete.
+2025-05-06 14:56:12,410 - INFO - --- STEP 3: Discharging to 3.00 V ---
+2025-05-06 14:56:12,410 - INFO - Configuring hardware for discharge...
+2025-05-06 14:56:12,410 - INFO - Setting relay pin 1 OFF
+2025-05-06 14:56:12,424 - INFO - Relay state updated. Currently ON: []
+2025-05-06 14:56:12,930 - INFO - Dummy DUT: Received Disable Charging (SW)
+2025-05-06 14:56:12,930 - INFO - Setting relay pin 2 OFF
+2025-05-06 14:56:12,940 - INFO - Relay state updated. Currently ON: []
+2025-05-06 14:56:13,445 - INFO - Dummy DUT: Notified USB Connected = False
+2025-05-06 14:56:13,446 - INFO - Dummy DUT: Notified Charger HW Enabled = False
+2025-05-06 14:56:13,446 - INFO - Hardware configured.
+2025-05-06 14:56:13,446 - INFO - Telling Dummy DUT to start discharging...
+2025-05-06 14:56:13,446 - INFO - Dummy DUT: Forcing DISCHARGING mode.
+2025-05-06 14:56:15,449 - INFO - Discharging...
+2025-05-06 14:56:15,449 - INFO -   Discharging... Current voltage: 3.540 V (Target: 3.00 V)
+2025-05-06 14:56:22,155 - INFO - Dummy DUT: Discharging complete (min voltage). Switching to IDLE.
+2025-05-06 14:56:22,477 - INFO - Discharge limit (3.00 V) reached at 2.999 V.
+2025-05-06 14:56:22,477 - INFO - Stopping discharge process (hardware/simulation)...
+2025-05-06 14:56:22,478 - INFO - Discharge step complete.
+2025-05-06 14:56:22,478 - INFO - --- STEP 4: Connecting USB, Charging Disabled ---
+2025-05-06 14:56:22,478 - INFO - Sending SW disable charging command...
+2025-05-06 14:56:22,478 - INFO - Dummy DUT: Received Disable Charging (SW)
+2025-05-06 14:56:22,478 - INFO - Disabling charger HW via relay...
+2025-05-06 14:56:22,478 - INFO - Setting relay pin 2 OFF
+2025-05-06 14:56:22,488 - INFO - Relay state updated. Currently ON: []
+2025-05-06 14:56:22,993 - INFO - Connecting USB via relay...
+2025-05-06 14:56:22,993 - INFO - Setting relay pin 1 ON
+2025-05-06 14:56:23,003 - INFO - Relay state updated. Currently ON: [1]
+2025-05-06 14:56:23,505 - INFO - Dummy DUT: Notified USB Connected = True
+2025-05-06 14:56:23,506 - INFO - Dummy DUT: Notified Charger HW Enabled = False
+2025-05-06 14:56:23,506 - INFO - USB connected, charging should be disabled.
+2025-05-06 14:56:23,506 - INFO - --- STEP 5 (Pre-Charge): Relaxing for 0.0 hour(s) (10 seconds) ---
+2025-05-06 14:56:23,506 - INFO - Relaxation started. Ends at 14:56:33
+2025-05-06 14:56:33,511 - INFO - Relaxation complete.
+2025-05-06 14:56:33,511 - INFO - --- STEP 6: Enabling Charging ---
+2025-05-06 14:56:33,511 - INFO - Enabling charger HW via relay...
+2025-05-06 14:56:33,512 - INFO - Setting relay pin 2 ON
+2025-05-06 14:56:33,521 - INFO - Relay state updated. Currently ON: [1, 2]
+2025-05-06 14:56:34,025 - INFO - Sending SW enable charging command...
+2025-05-06 14:56:34,025 - INFO - Dummy DUT: Received Enable Charging (SW)
+2025-05-06 14:56:34,025 - INFO - Dummy DUT: Notified USB Connected = True
+2025-05-06 14:56:34,026 - INFO - Dummy DUT: Notified Charger HW Enabled = True
+2025-05-06 14:56:34,026 - INFO - Charging enabled (HW relay ON, SW command sent).
+2025-05-06 14:56:34,026 - INFO - --- STEP 7: Charging until IDLE (Current < 50 mA) ---
+2025-05-06 14:56:34,026 - INFO - Max charge time set to 10.0 hours.
+2025-05-06 14:56:34,026 - INFO -   Charging status (0.0 min): Mode=IDLE, I=1.7mA, V=3.000V
+2025-05-06 14:56:34,026 - INFO - Charge end condition detected. Verifying stability...
+2025-05-06 14:56:39,028 - INFO - Charge termination condition became unstable. Resetting verification.
+2025-05-06 14:57:04,047 - INFO -   Charging status (0.5 min): Mode=IDLE, I=2.4mA, V=4.200V
+2025-05-06 14:57:04,047 - INFO - Charge end condition detected. Verifying stability...
+2025-05-06 14:57:34,078 - INFO -   Charging status (1.0 min): Mode=IDLE, I=2.3mA, V=4.199V
+2025-05-06 14:57:34,078 - INFO - Charge termination condition stable. Charge complete.
+2025-05-06 14:57:34,079 - INFO - Charging step complete.
+2025-05-06 14:57:34,079 - INFO - --- STEP 8 (Post-Charge): Relaxing for 0.0 hour(s) (10 seconds) ---
+2025-05-06 14:57:34,079 - INFO - Relaxation started. Ends at 14:57:44
+2025-05-06 14:57:44,084 - INFO - Relaxation complete.
+2025-05-06 14:57:44,084 - INFO - --- Test Cycle 1 at 25°C Completed Successfully ---
+2025-05-06 14:57:44,085 - INFO - Stopping data logger for the cycle...
+2025-05-06 14:57:44,085 - INFO - DataLogger: Stopping logging for _temp_25C_cycle1_full.csv...
+2025-05-06 14:57:44,086 - INFO - DataLogger: Logging thread stopped for _temp_25C_cycle1_full.csv.
+2025-05-06 14:57:44,087 - INFO - DataLogger: Logging stopped for _temp_25C_cycle1_full.csv.
+2025-05-06 14:57:44,087 - INFO - --- STEP 9: Storing Log File ---
+2025-05-06 14:57:44,089 - INFO - Stored log file: test_results/temp_25C/25C_cycle1.csv
+2025-05-06 14:57:44,090 - INFO - Cycle log stored as: 25C_cycle1.csv
+2025-05-06 14:57:44,090 - INFO - --- Cycle 1/1 for 25°C finished successfully in 2.4 minutes. ---
+2025-05-06 14:57:44,090 - INFO - Progress: 1/2 total cycles completed.
+2025-05-06 14:57:44,090 - INFO - ===== Finished all cycles for Temperature: 25°C =====
+2025-05-06 14:57:44,090 - INFO - ===== Processing Temperature: 0°C =====
+2025-05-06 14:57:44,090 - INFO - --- STEP 1: Setting Target Temperature to 0°C ---
+2025-05-06 14:57:44,090 - INFO - --- MANUAL MODE: Target temperature set to 0.0°C ---
+2025-05-06 14:57:44,090 - INFO - Target temperature set instruction sent/logged.
+2025-05-06 14:57:44,090 - INFO - --- Starting Cycle 1/1 for 0°C ---
+2025-05-06 14:57:44,090 - INFO - --- Starting Test Cycle 1 at 0°C ---
+2025-05-06 14:57:44,090 - INFO - Starting data logger for the cycle...
+2025-05-06 14:57:44,090 - INFO - DataLogger: Starting logging to test_results/_temp_0C_cycle1_full.csv every 1.0s
+2025-05-06 14:57:44,091 - INFO - Verifying/Setting temperature...
+2025-05-06 14:57:44,091 - INFO - Sending WhatsApp notification for manual action...
+2025-05-06 14:57:44,091 - WARNING - Using hardcoded URL for WhatsApp notification.
+2025-05-06 14:57:44,091 - INFO - Attempting to open hardcoded WhatsApp URL in browser...
+2025-05-06 14:57:44,246 - INFO - Browser command executed to open hardcoded WhatsApp URL.
+2025-05-06 14:57:44,247 - INFO - WhatsApp notification request sent.
+2025-05-06 14:58:13,213 - INFO - Continuing test based on manual confirmation.
+2025-05-06 14:58:13,214 - INFO - --- STEP 2 (Pre-Discharge): Relaxing for 0.0 hour(s) (10 seconds) ---
+2025-05-06 14:58:13,214 - INFO - Relaxation started. Ends at 14:58:23
+2025-05-06 14:58:17,664 - INFO - Stopping data logger for the cycle...
+2025-05-06 14:58:17,665 - INFO - DataLogger: Stopping logging for _temp_0C_cycle1_full.csv...
+2025-05-06 14:58:17,666 - INFO - DataLogger: Logging thread stopped for _temp_0C_cycle1_full.csv.
+2025-05-06 14:58:17,667 - INFO - DataLogger: Logging stopped for _temp_0C_cycle1_full.csv.
+2025-05-06 14:58:17,667 - INFO - --- STEP 9: Storing Log File ---
+2025-05-06 14:58:17,669 - INFO - Stored log file: test_results/temp_0C/0C_cycle1.csv
+2025-05-06 14:58:17,670 - INFO - Cycle log stored as: 0C_cycle1.csv
+2025-05-06 14:58:17,670 - WARNING - <<<<< Test execution interrupted by user (Ctrl+C) >>>>>
+2025-05-06 14:58:17,670 - INFO - Performing final cleanup...
+2025-05-06 14:58:17,670 - INFO - Ensuring all controlled relays are OFF...
+2025-05-06 14:58:17,671 - INFO - Setting relay pins [1, 2, 8] OFF
+2025-05-06 14:58:17,680 - INFO - Relay state updated. Currently ON: []
+2025-05-06 14:58:17,680 - INFO - Closing Dummy DUT Controller...
+2025-05-06 14:58:17,681 - INFO - Dummy DUT Controller closed.
+2025-05-06 14:58:17,681 - INFO - Test execution ABORTED. Total duration: 0.05 hours.
+2025-05-06 14:58:17,681 - INFO - Closing Dummy DUT Controller...
+2025-05-06 14:58:17,681 - INFO - Dummy DUT Controller closed.
