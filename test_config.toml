@@ -13,12 +13,25 @@ simulate_dut = true
 [relay]
 # IP adresa Deditec relé desky
 ip_address = "192.168.1.10" # <-- ZMĚŇ NA SKUTEČNOU IP!
-# Číslo relé (1-16), které spíná USB +5V VBUS
-usb_power_relay_pin = 1
-# Číslo relé (1-16), které spíná HW enable nabíječky (volitelné)
-charger_enable_relay_pin = 2
-# Číslo relé (1-16) připojeného k bzučáku (volitelné)
-beeper_pin = 8
+
+# Seznam čísel relé (1-16), které spínají USB +5V VBUS
+# I když je jen jedno, definujeme jako seznam pro konzistenci
+usb_power_relay_pins = [1, 4, 6]
+
+# Seznam čísel relé (1-16), které spínají HW enable nabíječky (volitelné)
+# Pokud nepoužíváš, můžeš dát prázdný seznam: charger_enable_relay_pins = []
+charger_enable_relay_pins = [2]
+
+# Seznam čísel relé (1-16) připojených k bzučáku (volitelné)
+# Může být více bzučáků nebo jen jeden
+beeper_pins = [8]
+
+# --- NOVÁ SEKCE (Příklad pro budoucí použití) ---
+# Můžeš si definovat skupiny pinů pro specifické účely
+# Například pro spínání různých zátěží v testu
+# load_relay_pins_group1 = [9, 10]
+# load_relay_pins_group2 = [11]
+# ---------------------------------------------
 
 [temperature_chamber]
 # Povolit automatické ovládání komory? false = manuální režim s čekáním na Enter
@@ -30,15 +43,52 @@ stabilization_timeout_seconds = 1800
 
 [test_plan]
 # Teploty [°C], při kterých se mají testy provést
-temperatures_celsius = [25, 0] # Příklad: 25°C a 0°C
-# Počet kompletních nabíjecích/vybíjecích cyklů pro každou teplotu
+temperatures_celsius = [25, 0, -20, 50] # Příklad
+# Které testovací módy se mají spustit pro každou teplotu a cyklus?
+# Možnosti: "linear", "switching", "random"
+test_modes = ["linear", "switching"] # Spustí Linear a pak Switching
+# Počet kompletních cyklů (všech zvolených módů) pro každou teplotu
 cycles_per_temperature = 1
-# Cílové napětí [V] pro ukončení fáze vybíjení
-discharge_voltage_limit = 3.0
-# Prah proudu [mA], pod který musí klesnout pro detekci konce nabíjení (IDLE)
-charge_idle_current_threshold_ma = 50
-# Délka relaxačních pauz [s] (např. 3600 = 1 hodina)
-relaxation_time_seconds = 10 # Krátká relaxace pro rychlejší testování
+
+# --- Parametry pro Linear Test ---
+linear_discharge_voltage_limit = 3.0       # Cílové napětí [V] pro konec vybíjení
+linear_charge_idle_current_threshold_ma = 50 # Prah proudu [mA] pro konec nabíjení
+
+# --- Parametry pro Switching Test ---
+# Simuluje rychlé změny - např. střídání nabíjení/vybíjení nebo enable/disable
+switching_phase_duration_s = 30    # Jak dlouho trvá jedna fáze (např. 5 minut nabíjení, 5 minut vybíjení, 5min = 5 * 60)
+switching_interval_s = 10              # Jak často přepínat stav (v sekundách)
+switching_charge_command = "enable_charging" # Příkaz pro "zapnutí" v cyklu
+switching_discharge_command = "disable_charging" # Příkaz pro "vypnutí" v cyklu (nebo jiný pro aktivní vybíjení?)
+
+# --- Parametry pro Random Wonder Test ---
+random_duration_s = 30             # Celková délka Random testu (např. 30 minut = 30 * 60)
+random_min_phase_s = 15                # Minimální doba trvání jedné fáze (nab/vyb)
+random_max_phase_s = 30               # Maximální doba trvání jedné fáze
+random_charge_probability = 0.6        # Pravděpodobnost, že další fáze bude nabíjení (0 až 1)
+
+# Bezpečnostní limity pro Random test (NUTNO PEČLIVĚ NASTAVIT!)
+random_max_voltage = 4.25              # Horní hranice napětí
+random_min_voltage = 2.9               # Dolní hranice napětí
+# Pokud DUT podporuje nastavení proudu, přidat:
+# random_max_charge_current_ma = 600
+# random_min_charge_current_ma = 50
+# random_max_discharge_current_ma = -400 # Záporný!
+# random_min_discharge_current_ma = -100 # Záporný!
+
+# --- Společné parametry ---
+# Délka relaxačních pauz [s] (může být specifická pro mód?)
+relaxation_time_seconds = 10 # Krátká pro testování
+
+# --- NOVÁ SEKCE: Notifications ---
+[notifications]
+# Metoda upozornění pro manuální krok teploty: "beeper", "slack", "both", "none"
+manual_temp_mode = "slack"
+
+# Nastavení pro Slack (vyplň, pokud používáš "slack" nebo "both")
+# URL Webhooku ze Slack aplikace (!!! NEUKLÁDEJ DO VEŘEJNÉHO GITU !!!)
+slack_webhook_url = "https://hooks.slack.com/services/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"
+
 
 [dut_commands]
 # !!! UPRAV PODLE SVÉHO DUT !!!
@@ -58,16 +108,5 @@ get_vsys = "system vsys?"               # Očekává napětí Vsys v V
 get_die_temp = "temp chip?"             # Očekává teplotu čipu v °C
 get_iba_meas_status = "charger ibastat?" # Očekává stav měření proudu
 get_buck_status = "charger buckstat?"    # Očekává stav buck
-
-[notifications]
-# Metoda upozornění pro manuální krok teploty: "beeper", "whatsapp", "both", "none"
-manual_temp_mode = "whatsapp"  # Výchozí je pípání
-
-# Nastavení pro WhatsApp (vyplň, pokud používáš "whatsapp" nebo "both")
-# Tvé tel. číslo včetně mezinárodní předvolby (např. "+420123456789")
-whatsapp_phone_number = "+420733729931"
-# Tvůj API klíč z CallMeBot.com (!!! NEUKLÁDEJ DO VEŘEJNÉHO GITU !!!)
-whatsapp_apikey = "9647101"
-
-# Volitelně: Nastavení vybíjecího proudu (pokud podporováno)
-# set_discharge_current = "battery discharge {current_ma}"
+# Volitelně: set_charge_current = "charger current {current_ma}"
+# Volitelně: set_discharge_load = "battery load {load_ma}" # Pro aktivní vybíjení?

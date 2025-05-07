@@ -1,140 +1,316 @@
-2025-05-06 14:55:17,895 - INFO - Loading configuration from: /Users/marekmarik/Desktop/Automatic_battery_test/test_config.toml
-2025-05-06 14:55:17,895 - INFO - Configuration loaded successfully.
-2025-05-06 14:55:17,896 - INFO - Initializing hardware controllers...
-2025-05-06 14:55:17,896 - INFO - Initializing Relay Controller for Deditec at 192.168.1.10:9912
-2025-05-06 14:55:17,896 - INFO - Temperature Chamber Controller Initialized (Manual Mode).
-2025-05-06 14:55:17,896 - INFO - Manual Temp Notification Mode selected: 'whatsapp'
-2025-05-06 14:55:17,896 - INFO - WhatsApp notification is configured and available.
-2025-05-06 14:55:17,898 - INFO - Initializing Dummy DUT Controller...
-2025-05-06 14:55:17,898 - INFO - Dummy DUT Controller Initialized and simulation thread started.
-2025-05-06 14:55:17,898 - WARNING - <<<<< RUNNING IN DUT SIMULATION MODE >>>>>
-2025-05-06 14:55:17,898 - INFO - --- Starting Peripheral Checks ---
-2025-05-06 14:55:17,898 - INFO - Pinging 192.168.1.10...
-2025-05-06 14:55:17,903 - INFO - Ping to 192.168.1.10 successful.
-2025-05-06 14:55:17,903 - INFO - Checking Deditec connection to 192.168.1.10:9912 (timeout=2s)...
-2025-05-06 14:55:17,905 - INFO - Deditec connection successful.
-2025-05-06 14:55:17,905 - INFO - DUT is in simulation mode.
-2025-05-06 14:55:17,905 - INFO - Temperature Chamber control is disabled or in manual mode.
-2025-05-06 14:55:17,905 - INFO - --- Peripheral Checks Passed ---
-2025-05-06 14:55:17,905 - INFO - Test results will be saved in: /Users/marekmarik/Desktop/Automatic_battery_test/test_results
-2025-05-06 14:55:17,905 - INFO - Test plan: 2 temperatures, 1 cycles each. Total cycles: 2
-2025-05-06 14:55:17,905 - INFO - DUT Simulation Mode: ENABLED
-2025-05-06 14:55:17,905 - INFO - Temperature Control: MANUAL
-2025-05-06 14:55:17,905 - INFO - ===== Processing Temperature: 25°C =====
-2025-05-06 14:55:17,905 - INFO - --- STEP 1: Setting Target Temperature to 25°C ---
-2025-05-06 14:55:17,905 - INFO - --- MANUAL MODE: Target temperature set to 25.0°C ---
-2025-05-06 14:55:17,905 - INFO - Target temperature set instruction sent/logged.
-2025-05-06 14:55:17,905 - INFO - --- Starting Cycle 1/1 for 25°C ---
-2025-05-06 14:55:17,905 - INFO - --- Starting Test Cycle 1 at 25°C ---
-2025-05-06 14:55:17,905 - INFO - Starting data logger for the cycle...
-2025-05-06 14:55:17,905 - INFO - DataLogger: Starting logging to test_results/_temp_25C_cycle1_full.csv every 1.0s
-2025-05-06 14:55:17,905 - INFO - Verifying/Setting temperature...
-2025-05-06 14:55:17,905 - INFO - Sending WhatsApp notification for manual action...
-2025-05-06 14:55:17,905 - WARNING - Using hardcoded URL for WhatsApp notification.
-2025-05-06 14:55:17,905 - INFO - Attempting to open hardcoded WhatsApp URL in browser...
-2025-05-06 14:55:18,015 - INFO - Browser command executed to open hardcoded WhatsApp URL.
-2025-05-06 14:55:18,015 - INFO - WhatsApp notification request sent.
-2025-05-06 14:56:02,403 - INFO - Continuing test based on manual confirmation.
-2025-05-06 14:56:02,404 - INFO - --- STEP 2 (Pre-Discharge): Relaxing for 0.0 hour(s) (10 seconds) ---
-2025-05-06 14:56:02,404 - INFO - Relaxation started. Ends at 14:56:12
-2025-05-06 14:56:12,409 - INFO - Relaxation complete.
-2025-05-06 14:56:12,410 - INFO - --- STEP 3: Discharging to 3.00 V ---
-2025-05-06 14:56:12,410 - INFO - Configuring hardware for discharge...
-2025-05-06 14:56:12,410 - INFO - Setting relay pin 1 OFF
-2025-05-06 14:56:12,424 - INFO - Relay state updated. Currently ON: []
-2025-05-06 14:56:12,930 - INFO - Dummy DUT: Received Disable Charging (SW)
-2025-05-06 14:56:12,930 - INFO - Setting relay pin 2 OFF
-2025-05-06 14:56:12,940 - INFO - Relay state updated. Currently ON: []
-2025-05-06 14:56:13,445 - INFO - Dummy DUT: Notified USB Connected = False
-2025-05-06 14:56:13,446 - INFO - Dummy DUT: Notified Charger HW Enabled = False
-2025-05-06 14:56:13,446 - INFO - Hardware configured.
-2025-05-06 14:56:13,446 - INFO - Telling Dummy DUT to start discharging...
-2025-05-06 14:56:13,446 - INFO - Dummy DUT: Forcing DISCHARGING mode.
-2025-05-06 14:56:15,449 - INFO - Discharging...
-2025-05-06 14:56:15,449 - INFO -   Discharging... Current voltage: 3.540 V (Target: 3.00 V)
-2025-05-06 14:56:22,155 - INFO - Dummy DUT: Discharging complete (min voltage). Switching to IDLE.
-2025-05-06 14:56:22,477 - INFO - Discharge limit (3.00 V) reached at 2.999 V.
-2025-05-06 14:56:22,477 - INFO - Stopping discharge process (hardware/simulation)...
-2025-05-06 14:56:22,478 - INFO - Discharge step complete.
-2025-05-06 14:56:22,478 - INFO - --- STEP 4: Connecting USB, Charging Disabled ---
-2025-05-06 14:56:22,478 - INFO - Sending SW disable charging command...
-2025-05-06 14:56:22,478 - INFO - Dummy DUT: Received Disable Charging (SW)
-2025-05-06 14:56:22,478 - INFO - Disabling charger HW via relay...
-2025-05-06 14:56:22,478 - INFO - Setting relay pin 2 OFF
-2025-05-06 14:56:22,488 - INFO - Relay state updated. Currently ON: []
-2025-05-06 14:56:22,993 - INFO - Connecting USB via relay...
-2025-05-06 14:56:22,993 - INFO - Setting relay pin 1 ON
-2025-05-06 14:56:23,003 - INFO - Relay state updated. Currently ON: [1]
-2025-05-06 14:56:23,505 - INFO - Dummy DUT: Notified USB Connected = True
-2025-05-06 14:56:23,506 - INFO - Dummy DUT: Notified Charger HW Enabled = False
-2025-05-06 14:56:23,506 - INFO - USB connected, charging should be disabled.
-2025-05-06 14:56:23,506 - INFO - --- STEP 5 (Pre-Charge): Relaxing for 0.0 hour(s) (10 seconds) ---
-2025-05-06 14:56:23,506 - INFO - Relaxation started. Ends at 14:56:33
-2025-05-06 14:56:33,511 - INFO - Relaxation complete.
-2025-05-06 14:56:33,511 - INFO - --- STEP 6: Enabling Charging ---
-2025-05-06 14:56:33,511 - INFO - Enabling charger HW via relay...
-2025-05-06 14:56:33,512 - INFO - Setting relay pin 2 ON
-2025-05-06 14:56:33,521 - INFO - Relay state updated. Currently ON: [1, 2]
-2025-05-06 14:56:34,025 - INFO - Sending SW enable charging command...
-2025-05-06 14:56:34,025 - INFO - Dummy DUT: Received Enable Charging (SW)
-2025-05-06 14:56:34,025 - INFO - Dummy DUT: Notified USB Connected = True
-2025-05-06 14:56:34,026 - INFO - Dummy DUT: Notified Charger HW Enabled = True
-2025-05-06 14:56:34,026 - INFO - Charging enabled (HW relay ON, SW command sent).
-2025-05-06 14:56:34,026 - INFO - --- STEP 7: Charging until IDLE (Current < 50 mA) ---
-2025-05-06 14:56:34,026 - INFO - Max charge time set to 10.0 hours.
-2025-05-06 14:56:34,026 - INFO -   Charging status (0.0 min): Mode=IDLE, I=1.7mA, V=3.000V
-2025-05-06 14:56:34,026 - INFO - Charge end condition detected. Verifying stability...
-2025-05-06 14:56:39,028 - INFO - Charge termination condition became unstable. Resetting verification.
-2025-05-06 14:57:04,047 - INFO -   Charging status (0.5 min): Mode=IDLE, I=2.4mA, V=4.200V
-2025-05-06 14:57:04,047 - INFO - Charge end condition detected. Verifying stability...
-2025-05-06 14:57:34,078 - INFO -   Charging status (1.0 min): Mode=IDLE, I=2.3mA, V=4.199V
-2025-05-06 14:57:34,078 - INFO - Charge termination condition stable. Charge complete.
-2025-05-06 14:57:34,079 - INFO - Charging step complete.
-2025-05-06 14:57:34,079 - INFO - --- STEP 8 (Post-Charge): Relaxing for 0.0 hour(s) (10 seconds) ---
-2025-05-06 14:57:34,079 - INFO - Relaxation started. Ends at 14:57:44
-2025-05-06 14:57:44,084 - INFO - Relaxation complete.
-2025-05-06 14:57:44,084 - INFO - --- Test Cycle 1 at 25°C Completed Successfully ---
-2025-05-06 14:57:44,085 - INFO - Stopping data logger for the cycle...
-2025-05-06 14:57:44,085 - INFO - DataLogger: Stopping logging for _temp_25C_cycle1_full.csv...
-2025-05-06 14:57:44,086 - INFO - DataLogger: Logging thread stopped for _temp_25C_cycle1_full.csv.
-2025-05-06 14:57:44,087 - INFO - DataLogger: Logging stopped for _temp_25C_cycle1_full.csv.
-2025-05-06 14:57:44,087 - INFO - --- STEP 9: Storing Log File ---
-2025-05-06 14:57:44,089 - INFO - Stored log file: test_results/temp_25C/25C_cycle1.csv
-2025-05-06 14:57:44,090 - INFO - Cycle log stored as: 25C_cycle1.csv
-2025-05-06 14:57:44,090 - INFO - --- Cycle 1/1 for 25°C finished successfully in 2.4 minutes. ---
-2025-05-06 14:57:44,090 - INFO - Progress: 1/2 total cycles completed.
-2025-05-06 14:57:44,090 - INFO - ===== Finished all cycles for Temperature: 25°C =====
-2025-05-06 14:57:44,090 - INFO - ===== Processing Temperature: 0°C =====
-2025-05-06 14:57:44,090 - INFO - --- STEP 1: Setting Target Temperature to 0°C ---
-2025-05-06 14:57:44,090 - INFO - --- MANUAL MODE: Target temperature set to 0.0°C ---
-2025-05-06 14:57:44,090 - INFO - Target temperature set instruction sent/logged.
-2025-05-06 14:57:44,090 - INFO - --- Starting Cycle 1/1 for 0°C ---
-2025-05-06 14:57:44,090 - INFO - --- Starting Test Cycle 1 at 0°C ---
-2025-05-06 14:57:44,090 - INFO - Starting data logger for the cycle...
-2025-05-06 14:57:44,090 - INFO - DataLogger: Starting logging to test_results/_temp_0C_cycle1_full.csv every 1.0s
-2025-05-06 14:57:44,091 - INFO - Verifying/Setting temperature...
-2025-05-06 14:57:44,091 - INFO - Sending WhatsApp notification for manual action...
-2025-05-06 14:57:44,091 - WARNING - Using hardcoded URL for WhatsApp notification.
-2025-05-06 14:57:44,091 - INFO - Attempting to open hardcoded WhatsApp URL in browser...
-2025-05-06 14:57:44,246 - INFO - Browser command executed to open hardcoded WhatsApp URL.
-2025-05-06 14:57:44,247 - INFO - WhatsApp notification request sent.
-2025-05-06 14:58:13,213 - INFO - Continuing test based on manual confirmation.
-2025-05-06 14:58:13,214 - INFO - --- STEP 2 (Pre-Discharge): Relaxing for 0.0 hour(s) (10 seconds) ---
-2025-05-06 14:58:13,214 - INFO - Relaxation started. Ends at 14:58:23
-2025-05-06 14:58:17,664 - INFO - Stopping data logger for the cycle...
-2025-05-06 14:58:17,665 - INFO - DataLogger: Stopping logging for _temp_0C_cycle1_full.csv...
-2025-05-06 14:58:17,666 - INFO - DataLogger: Logging thread stopped for _temp_0C_cycle1_full.csv.
-2025-05-06 14:58:17,667 - INFO - DataLogger: Logging stopped for _temp_0C_cycle1_full.csv.
-2025-05-06 14:58:17,667 - INFO - --- STEP 9: Storing Log File ---
-2025-05-06 14:58:17,669 - INFO - Stored log file: test_results/temp_0C/0C_cycle1.csv
-2025-05-06 14:58:17,670 - INFO - Cycle log stored as: 0C_cycle1.csv
-2025-05-06 14:58:17,670 - WARNING - <<<<< Test execution interrupted by user (Ctrl+C) >>>>>
-2025-05-06 14:58:17,670 - INFO - Performing final cleanup...
-2025-05-06 14:58:17,670 - INFO - Ensuring all controlled relays are OFF...
-2025-05-06 14:58:17,671 - INFO - Setting relay pins [1, 2, 8] OFF
-2025-05-06 14:58:17,680 - INFO - Relay state updated. Currently ON: []
-2025-05-06 14:58:17,680 - INFO - Closing Dummy DUT Controller...
-2025-05-06 14:58:17,681 - INFO - Dummy DUT Controller closed.
-2025-05-06 14:58:17,681 - INFO - Test execution ABORTED. Total duration: 0.05 hours.
-2025-05-06 14:58:17,681 - INFO - Closing Dummy DUT Controller...
-2025-05-06 14:58:17,681 - INFO - Dummy DUT Controller closed.
+2025-05-07 17:38:26,647 - INFO - [root] - ==============================================
+2025-05-07 17:38:26,647 - INFO - [root] -    Starting Automated Battery Cycle Tester    
+2025-05-07 17:38:26,647 - INFO - [root] - ==============================================
+2025-05-07 17:38:26,647 - INFO - [root] - Loading configuration from: /Users/marekmarik/Desktop/Automatic_battery_test/test_config.toml
+2025-05-07 17:38:26,648 - INFO - [root] - Configuration loaded and validated successfully.
+2025-05-07 17:38:26,648 - INFO - [root] - Initializing hardware controllers...
+2025-05-07 17:38:26,648 - INFO - [root] - Initializing Relay Controller for Deditec at 192.168.1.10:9912
+2025-05-07 17:38:26,648 - INFO - [root] - Temperature Chamber Controller Initialized (Manual Mode).
+2025-05-07 17:38:26,648 - INFO - [root] - Manual Temp Notification Mode selected: 'slack'
+2025-05-07 17:38:26,648 - INFO - [root] - Slack notification is configured and available.
+2025-05-07 17:38:26,648 - INFO - [root] - Initializing Dummy DUT Controller...
+2025-05-07 17:38:26,648 - INFO - [root] - Dummy DUT simulation thread started.
+2025-05-07 17:38:26,648 - INFO - [root] - Dummy DUT Controller Initialized. Initial state: V=3.700V, Mode=IDLE
+2025-05-07 17:38:26,648 - WARNING - [root] - <<<<< RUNNING IN DUT SIMULATION MODE >>>>>
+2025-05-07 17:38:26,648 - INFO - [root] - --- Starting Peripheral Checks ---
+2025-05-07 17:38:26,648 - INFO - [root] - Pinging 192.168.1.10...
+2025-05-07 17:38:26,654 - INFO - [root] - Ping to 192.168.1.10 successful.
+2025-05-07 17:38:26,654 - INFO - [root] - Checking Deditec connection to 192.168.1.10:9912 (timeout=2s)...
+2025-05-07 17:38:26,655 - INFO - [root] - Deditec connection successful.
+2025-05-07 17:38:26,655 - INFO - [root] - DUT is in simulation mode.
+2025-05-07 17:38:26,656 - INFO - [root] - Temperature Chamber control is disabled or in manual mode.
+2025-05-07 17:38:26,656 - INFO - [root] - --- Peripheral Checks Passed ---
+2025-05-07 17:38:26,656 - INFO - [root] - Test results will be saved in: /Users/marekmarik/Desktop/Automatic_battery_test/test_results
+2025-05-07 17:38:26,656 - INFO - [root] - Test plan: Temperatures=[25, 0, -20, 50], Modes=['linear', 'switching'], CyclesPerTemp=1. Total runs: 8
+2025-05-07 17:38:26,656 - INFO - [root] - DUT Simulation Mode: ENABLED
+2025-05-07 17:38:26,656 - INFO - [root] - Temperature Control: MANUAL
+2025-05-07 17:38:26,656 - INFO - [root] - ===== Processing Temperature: 25°C =====
+2025-05-07 17:38:26,656 - INFO - [root] - --- STEP 1: Setting Target Temperature to 25°C ---
+2025-05-07 17:38:26,656 - INFO - [root] - --- MANUAL MODE: Target temperature set to 25.0°C ---
+2025-05-07 17:38:26,656 - INFO - [root] - Target temperature set instruction sent/logged.
+2025-05-07 17:38:26,656 - INFO - [root] - --- Starting Overall Cycle 1/1 for 25°C ---
+2025-05-07 17:38:26,656 - INFO - [root] -   -- Running Test Mode: 'linear' --
+2025-05-07 17:38:26,656 - INFO - [root] - --- Starting Test: Mode='linear', Cycle=1, Temp=25°C ---
+2025-05-07 17:38:26,656 - INFO - [root] - Verifying/Setting temperature...
+2025-05-07 17:38:26,656 - INFO - [root] - Sending Slack notification for manual action...
+2025-05-07 17:38:26,656 - INFO - [notifications] - Sending Slack notification via webhook (using payload parameter)...
+2025-05-07 17:38:26,878 - INFO - [notifications] - Slack notification request sent successfully.
+2025-05-07 17:38:26,880 - INFO - [root] - Slack notification request sent.
+2025-05-07 17:38:30,757 - INFO - [root] - Continuing test based on manual confirmation.
+2025-05-07 17:38:30,758 - INFO - [root] - --- STEP Pre-Linear: Relaxing for 0.0 hour(s) (10 seconds) ---
+2025-05-07 17:38:30,758 - INFO - [root] - Relaxation started. Ends approx. at 17:38:40
+2025-05-07 17:38:40,760 - INFO - [root] - Relaxation complete.
+2025-05-07 17:38:40,761 - INFO - [root] - Executing Linear Test Steps...
+2025-05-07 17:38:40,761 - INFO - [root] - DataLogger: Starting logging to test_results/_temp_25C_cycle1_linear_discharge.csv every 1.0s
+2025-05-07 17:38:40,763 - INFO - [root] - --- STEP Discharge (Linear): Discharging to 3.00 V ---
+2025-05-07 17:38:40,764 - INFO - [root] - Configuring hardware for discharge...
+2025-05-07 17:38:40,764 - INFO - [root] - Disconnecting USB Power (Pins: [1, 4, 6])...
+2025-05-07 17:38:40,764 - INFO - [root] - Setting multiple relays: Requesting ON=[], Requesting OFF=[1, 4, 6]
+2025-05-07 17:38:40,774 - INFO - [root] - Relay state updated. Currently ON: [2]
+2025-05-07 17:38:41,278 - INFO - [root] - Dummy DUT: Received Disable Charging (SW)
+2025-05-07 17:38:41,279 - INFO - [root] - Disabling Charger HW (Pins: [2])...
+2025-05-07 17:38:41,279 - INFO - [root] - Setting multiple relays: Requesting ON=[], Requesting OFF=[2]
+2025-05-07 17:38:41,288 - INFO - [root] - Relay state updated. Currently ON: []
+2025-05-07 17:38:41,793 - INFO - [root] - Dummy DUT: Notified USB Connected = False
+2025-05-07 17:38:41,794 - INFO - [root] - Dummy DUT: Notified Charger HW Enabled = False
+2025-05-07 17:38:41,794 - INFO - [root] - Telling Dummy DUT to start discharging...
+2025-05-07 17:38:41,794 - INFO - [root] - Dummy DUT: Forcing DISCHARGING mode flag ON.
+2025-05-07 17:38:43,799 - INFO - [root] - Discharging...
+2025-05-07 17:38:43,799 - INFO - [root] -   Discharging... V=3.539V (Target: 3.00V)
+2025-05-07 17:38:55,833 - INFO - [root] - Discharge limit reached at 3.000 V.
+2025-05-07 17:38:55,834 - INFO - [root] - Stopping discharge process (hardware/simulation)...
+2025-05-07 17:38:55,834 - INFO - [root] - Discharge step complete.
+2025-05-07 17:38:55,835 - INFO - [root] - DataLogger: Stopping logging for _temp_25C_cycle1_linear_discharge.csv...
+2025-05-07 17:38:55,836 - INFO - [root] - DataLogger: Logging thread stopped for _temp_25C_cycle1_linear_discharge.csv.
+2025-05-07 17:38:55,836 - INFO - [root] - DataLogger: Logging stopped for _temp_25C_cycle1_linear_discharge.csv.
+2025-05-07 17:38:55,836 - INFO - [root] - --- STEP Connect USB / Disable Charge ---
+2025-05-07 17:38:55,836 - INFO - [root] - Sending SW disable charging command...
+2025-05-07 17:38:55,837 - INFO - [root] - Dummy DUT: Received Disable Charging (SW)
+2025-05-07 17:38:55,837 - INFO - [root] - Disabling charger HW via relay...
+2025-05-07 17:38:55,837 - INFO - [root] - Disabling Charger HW (Pins: [2])...
+2025-05-07 17:38:55,837 - INFO - [root] - Setting multiple relays: Requesting ON=[], Requesting OFF=[2]
+2025-05-07 17:38:55,847 - INFO - [root] - Relay state updated. Currently ON: []
+2025-05-07 17:38:56,349 - INFO - [root] - Connecting USB via relay...
+2025-05-07 17:38:56,349 - INFO - [root] - Connecting USB Power (Pins: [1, 4, 6])...
+2025-05-07 17:38:56,349 - INFO - [root] - Setting multiple relays: Requesting ON=[1, 4, 6], Requesting OFF=[]
+2025-05-07 17:38:56,359 - INFO - [root] - Relay state updated. Currently ON: [1, 4, 6]
+2025-05-07 17:38:56,861 - INFO - [root] - Dummy DUT: Notified USB Connected = True
+2025-05-07 17:38:56,862 - INFO - [root] - Dummy DUT: Notified Charger HW Enabled = False
+2025-05-07 17:38:56,862 - INFO - [root] - USB connected, charging should be disabled.
+2025-05-07 17:38:56,862 - INFO - [root] - --- STEP Linear Pre-Charge: Relaxing for 0.0 hour(s) (10 seconds) ---
+2025-05-07 17:38:56,862 - INFO - [root] - Relaxation started. Ends approx. at 17:39:06
+2025-05-07 17:39:06,865 - INFO - [root] - Relaxation complete.
+2025-05-07 17:39:06,867 - INFO - [root] - DataLogger: Starting logging to test_results/_temp_25C_cycle1_linear_charge.csv every 1.0s
+2025-05-07 17:39:06,869 - INFO - [root] - --- STEP Enable Charging ---
+2025-05-07 17:39:06,869 - INFO - [root] - Enabling charger HW via relay...
+2025-05-07 17:39:06,869 - INFO - [root] - Enabling Charger HW (Pins: [2])...
+2025-05-07 17:39:06,869 - INFO - [root] - Setting multiple relays: Requesting ON=[2], Requesting OFF=[]
+2025-05-07 17:39:06,880 - INFO - [root] - Relay state updated. Currently ON: [1, 2, 4, 6]
+2025-05-07 17:39:07,387 - INFO - [root] - Sending SW enable charging command...
+2025-05-07 17:39:07,396 - INFO - [root] - Dummy DUT: Received Enable Charging (SW)
+2025-05-07 17:39:07,396 - INFO - [root] - Dummy DUT: Notified USB Connected = True
+2025-05-07 17:39:07,398 - INFO - [root] - Dummy DUT: Notified Charger HW Enabled = True
+2025-05-07 17:39:07,400 - INFO - [root] - Charging enabled (HW relay ON, SW command sent).
+2025-05-07 17:39:07,401 - INFO - [root] - --- STEP Charge (Linear): Charging until IDLE (Current < 50 mA) ---
+2025-05-07 17:39:07,402 - INFO - [root] -   Charging...(0.0m): Mode=IDLE, I=-2.2mA, V=3.001V
+2025-05-07 17:39:07,402 - INFO - [root] - Charge end condition detected. Verifying...
+2025-05-07 17:39:12,404 - INFO - [root] - Charge termination unstable. Resetting.
+2025-05-07 17:39:32,421 - INFO - [root] - Charge end condition detected. Verifying...
+2025-05-07 17:39:37,425 - INFO - [root] -   Charging...(0.5m): Mode=IDLE, I=-1.6mA, V=4.225V
+2025-05-07 17:40:02,447 - INFO - [root] - Charge termination stable.
+2025-05-07 17:40:02,447 - INFO - [root] - Charging step complete.
+2025-05-07 17:40:02,448 - INFO - [root] - DataLogger: Stopping logging for _temp_25C_cycle1_linear_charge.csv...
+2025-05-07 17:40:02,449 - INFO - [root] - DataLogger: Logging thread stopped for _temp_25C_cycle1_linear_charge.csv.
+2025-05-07 17:40:02,450 - INFO - [root] - DataLogger: Logging stopped for _temp_25C_cycle1_linear_charge.csv.
+2025-05-07 17:40:02,450 - INFO - [root] - --- STEP Post-Linear: Relaxing for 0.0 hour(s) (10 seconds) ---
+2025-05-07 17:40:02,450 - INFO - [root] - Relaxation started. Ends approx. at 17:40:12
+2025-05-07 17:40:12,452 - INFO - [root] - Relaxation complete.
+2025-05-07 17:40:12,453 - INFO - [root] - --- Test Mode 'linear' Completed Successfully (Cycle 1, Temp 25°C) ---
+2025-05-07 17:40:12,453 - INFO - [root] - --- Storing Log File for Phase: linear_discharge ---
+2025-05-07 17:40:12,456 - INFO - [root] - Stored log file: test_results/temp_25C/cycle_1/25C_cycle1_linear_discharge.csv
+2025-05-07 17:40:12,456 - INFO - [root] - Discharge log stored as: 25C_cycle1_linear_discharge.csv
+2025-05-07 17:40:12,457 - INFO - [root] - --- Storing Log File for Phase: linear_charge ---
+2025-05-07 17:40:12,458 - INFO - [root] - Stored log file: test_results/temp_25C/cycle_1/25C_cycle1_linear_charge.csv
+2025-05-07 17:40:12,458 - INFO - [root] - Charge log stored as: 25C_cycle1_linear_charge.csv
+2025-05-07 17:40:12,458 - INFO - [root] -   -- Test Mode 'linear' finished successfully in 1.8 minutes. --
+2025-05-07 17:40:12,458 - INFO - [root] - Progress: 1/8 total runs completed.
+2025-05-07 17:40:12,458 - INFO - [root] -   -- Running Test Mode: 'switching' --
+2025-05-07 17:40:12,458 - INFO - [root] - --- Starting Test: Mode='switching', Cycle=1, Temp=25°C ---
+2025-05-07 17:40:12,459 - INFO - [root] - Verifying/Setting temperature...
+2025-05-07 17:40:12,459 - INFO - [root] - Sending Slack notification for manual action...
+2025-05-07 17:40:12,459 - INFO - [notifications] - Sending Slack notification via webhook (using payload parameter)...
+2025-05-07 17:40:12,470 - ERROR - [notifications] - Slack request failed (RequestException): HTTPSConnectionPool(host='hooks.slack.com', port=443): Max retries exceeded with url: /services/T0J8V2YBY/B08QVLDM57Z/jNgKhOJGtVFBv5Qe95lv6gfO (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x102a0efd0>: Failed to resolve 'hooks.slack.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-05-07 17:40:12,470 - ERROR - [root] - Failed to send Slack notification request.
+2025-05-07 17:40:12,470 - INFO - [root] - No notification method active. Waiting silently for user confirmation...
+2025-05-07 17:42:25,181 - INFO - [root] - Continuing test based on manual confirmation.
+2025-05-07 17:42:25,183 - INFO - [root] - --- STEP Pre-Switching: Relaxing for 0.0 hour(s) (10 seconds) ---
+2025-05-07 17:42:25,184 - INFO - [root] - Relaxation started. Ends approx. at 17:42:35
+2025-05-07 17:42:35,185 - INFO - [root] - Relaxation complete.
+2025-05-07 17:42:35,185 - INFO - [root] - Executing Switching Test Steps...
+2025-05-07 17:42:35,186 - INFO - [root] - DataLogger: Starting logging to test_results/_temp_25C_cycle1_switching_main.csv every 1.0s
+2025-05-07 17:42:35,187 - INFO - [root] - --- STEP Switching Phase: Duration=30s, Interval=10s ---
+2025-05-07 17:42:35,187 - INFO - [root] - Switching state to OFF (Command: N/A)
+2025-05-07 17:42:35,187 - INFO - [root] - Dummy DUT: Received Disable Charging (SW)
+2025-05-07 17:42:45,364 - INFO - [root] - Switching state to ON (Command: N/A)
+2025-05-07 17:42:45,365 - INFO - [root] - Dummy DUT: Received Enable Charging (SW)
+2025-05-07 17:42:55,555 - INFO - [root] - Switching state to OFF (Command: N/A)
+2025-05-07 17:42:55,556 - INFO - [root] - Dummy DUT: Received Disable Charging (SW)
+2025-05-07 17:43:05,332 - INFO - [root] - Switching phase finished. Disabling charging.
+2025-05-07 17:43:05,333 - INFO - [root] - Dummy DUT: Received Disable Charging (SW)
+2025-05-07 17:43:05,333 - INFO - [root] - Disabling Charger HW (Pins: [2])...
+2025-05-07 17:43:05,333 - INFO - [root] - Setting multiple relays: Requesting ON=[], Requesting OFF=[2]
+2025-05-07 17:43:08,336 - ERROR - [backend.deditec_driver.deditec_1_16_on] - Deditec:: connection timed out (3s)
+2025-05-07 17:43:08,339 - ERROR - [root] - Failed to connect to Deditec at 192.168.1.10: Failed to connect to Deditec device at 192.168.1.10:9912
+2025-05-07 17:43:08,339 - INFO - [root] - Dummy DUT: Notified USB Connected = True
+2025-05-07 17:43:08,339 - INFO - [root] - Dummy DUT: Notified Charger HW Enabled = False
+2025-05-07 17:43:08,339 - INFO - [root] - Switching phase complete.
+2025-05-07 17:43:08,340 - INFO - [root] - DataLogger: Stopping logging for _temp_25C_cycle1_switching_main.csv...
+2025-05-07 17:43:08,341 - INFO - [root] - DataLogger: Logging thread stopped for _temp_25C_cycle1_switching_main.csv.
+2025-05-07 17:43:08,341 - INFO - [root] - DataLogger: Logging stopped for _temp_25C_cycle1_switching_main.csv.
+2025-05-07 17:43:08,342 - INFO - [root] - --- STEP Post-Switching: Relaxing for 0.0 hour(s) (10 seconds) ---
+2025-05-07 17:43:08,342 - INFO - [root] - Relaxation started. Ends approx. at 17:43:18
+2025-05-07 17:43:18,347 - INFO - [root] - Relaxation complete.
+2025-05-07 17:43:18,348 - INFO - [root] - --- Test Mode 'switching' Completed Successfully (Cycle 1, Temp 25°C) ---
+2025-05-07 17:43:18,348 - INFO - [root] - --- Storing Log File for Phase: switching_main ---
+2025-05-07 17:43:18,349 - INFO - [root] - Stored log file: test_results/temp_25C/cycle_1/25C_cycle1_switching_main.csv
+2025-05-07 17:43:18,350 - INFO - [root] - Specific log for 'switching' stored as: 25C_cycle1_switching_main.csv
+2025-05-07 17:43:18,350 - INFO - [root] -   -- Test Mode 'switching' finished successfully in 3.1 minutes. --
+2025-05-07 17:43:18,350 - INFO - [root] - Progress: 2/8 total runs completed.
+2025-05-07 17:43:18,350 - INFO - [root] - ===== Finished all cycles for Temperature: 25°C =====
+2025-05-07 17:43:18,350 - INFO - [root] - ===== Processing Temperature: 0°C =====
+2025-05-07 17:43:18,351 - INFO - [root] - --- STEP 1: Setting Target Temperature to 0°C ---
+2025-05-07 17:43:18,351 - INFO - [root] - --- MANUAL MODE: Target temperature set to 0.0°C ---
+2025-05-07 17:43:18,351 - INFO - [root] - Target temperature set instruction sent/logged.
+2025-05-07 17:43:18,351 - INFO - [root] - --- Starting Overall Cycle 1/1 for 0°C ---
+2025-05-07 17:43:18,351 - INFO - [root] -   -- Running Test Mode: 'linear' --
+2025-05-07 17:43:18,351 - INFO - [root] - --- Starting Test: Mode='linear', Cycle=1, Temp=0°C ---
+2025-05-07 17:43:18,351 - INFO - [root] - Verifying/Setting temperature...
+2025-05-07 17:43:18,352 - INFO - [root] - Sending Slack notification for manual action...
+2025-05-07 17:43:18,352 - INFO - [notifications] - Sending Slack notification via webhook (using payload parameter)...
+2025-05-07 17:43:18,589 - INFO - [notifications] - Slack notification request sent successfully.
+2025-05-07 17:43:18,590 - INFO - [root] - Slack notification request sent.
+2025-05-07 17:43:39,760 - INFO - [root] - Continuing test based on manual confirmation.
+2025-05-07 17:43:39,760 - INFO - [root] - --- STEP Pre-Linear: Relaxing for 0.0 hour(s) (10 seconds) ---
+2025-05-07 17:43:39,760 - INFO - [root] - Relaxation started. Ends approx. at 17:43:49
+2025-05-07 17:43:49,770 - INFO - [root] - Relaxation complete.
+2025-05-07 17:43:49,772 - INFO - [root] - Executing Linear Test Steps...
+2025-05-07 17:43:49,773 - INFO - [root] - DataLogger: Starting logging to test_results/_temp_0C_cycle1_linear_discharge.csv every 1.0s
+2025-05-07 17:43:49,776 - INFO - [root] - --- STEP Discharge (Linear): Discharging to 3.00 V ---
+2025-05-07 17:43:49,777 - INFO - [root] - Configuring hardware for discharge...
+2025-05-07 17:43:49,777 - INFO - [root] - Disconnecting USB Power (Pins: [1, 4, 6])...
+2025-05-07 17:43:49,777 - INFO - [root] - Setting multiple relays: Requesting ON=[], Requesting OFF=[1, 4, 6]
+2025-05-07 17:43:52,781 - ERROR - [backend.deditec_driver.deditec_1_16_on] - Deditec:: connection timed out (3s)
+2025-05-07 17:43:52,781 - ERROR - [root] - Failed to connect to Deditec at 192.168.1.10: Failed to connect to Deditec device at 192.168.1.10:9912
+2025-05-07 17:43:52,781 - INFO - [root] - Dummy DUT: Received Disable Charging (SW)
+2025-05-07 17:43:52,781 - INFO - [root] - Disabling Charger HW (Pins: [2])...
+2025-05-07 17:43:52,781 - INFO - [root] - Setting multiple relays: Requesting ON=[], Requesting OFF=[2]
+2025-05-07 17:43:55,784 - ERROR - [backend.deditec_driver.deditec_1_16_on] - Deditec:: connection timed out (3s)
+2025-05-07 17:43:55,785 - ERROR - [root] - Failed to connect to Deditec at 192.168.1.10: Failed to connect to Deditec device at 192.168.1.10:9912
+2025-05-07 17:43:55,785 - INFO - [root] - Dummy DUT: Notified USB Connected = False
+2025-05-07 17:43:55,785 - INFO - [root] - Dummy DUT: Notified Charger HW Enabled = False
+2025-05-07 17:43:55,785 - INFO - [root] - Telling Dummy DUT to start discharging...
+2025-05-07 17:43:55,785 - INFO - [root] - Dummy DUT: Forcing DISCHARGING mode flag ON.
+2025-05-07 17:43:57,791 - INFO - [root] - Discharging...
+2025-05-07 17:43:57,791 - INFO - [root] -   Discharging... V=4.065V (Target: 3.00V)
+2025-05-07 17:44:12,850 - INFO - [root] -   Discharging... V=2.999V (Target: 3.00V)
+2025-05-07 17:44:12,851 - INFO - [root] - Discharge limit reached at 2.999 V.
+2025-05-07 17:44:12,851 - INFO - [root] - Stopping discharge process (hardware/simulation)...
+2025-05-07 17:44:12,852 - INFO - [root] - Discharge step complete.
+2025-05-07 17:44:12,852 - INFO - [root] - DataLogger: Stopping logging for _temp_0C_cycle1_linear_discharge.csv...
+2025-05-07 17:44:12,852 - INFO - [root] - DataLogger: Logging thread stopped for _temp_0C_cycle1_linear_discharge.csv.
+2025-05-07 17:44:12,852 - INFO - [root] - DataLogger: Logging stopped for _temp_0C_cycle1_linear_discharge.csv.
+2025-05-07 17:44:12,852 - INFO - [root] - --- STEP Connect USB / Disable Charge ---
+2025-05-07 17:44:12,852 - INFO - [root] - Sending SW disable charging command...
+2025-05-07 17:44:12,852 - INFO - [root] - Dummy DUT: Received Disable Charging (SW)
+2025-05-07 17:44:12,852 - INFO - [root] - Disabling charger HW via relay...
+2025-05-07 17:44:12,852 - INFO - [root] - Disabling Charger HW (Pins: [2])...
+2025-05-07 17:44:12,852 - INFO - [root] - Setting multiple relays: Requesting ON=[], Requesting OFF=[2]
+2025-05-07 17:44:15,855 - ERROR - [backend.deditec_driver.deditec_1_16_on] - Deditec:: connection timed out (3s)
+2025-05-07 17:44:15,856 - ERROR - [root] - Failed to connect to Deditec at 192.168.1.10: Failed to connect to Deditec device at 192.168.1.10:9912
+2025-05-07 17:44:15,856 - INFO - [root] - Connecting USB via relay...
+2025-05-07 17:44:15,856 - INFO - [root] - Connecting USB Power (Pins: [1, 4, 6])...
+2025-05-07 17:44:15,857 - INFO - [root] - Setting multiple relays: Requesting ON=[1, 4, 6], Requesting OFF=[]
+2025-05-07 17:44:18,859 - ERROR - [backend.deditec_driver.deditec_1_16_on] - Deditec:: connection timed out (3s)
+2025-05-07 17:44:18,860 - ERROR - [root] - Failed to connect to Deditec at 192.168.1.10: Failed to connect to Deditec device at 192.168.1.10:9912
+2025-05-07 17:44:18,860 - INFO - [root] - Dummy DUT: Notified USB Connected = True
+2025-05-07 17:44:18,860 - INFO - [root] - Dummy DUT: Notified Charger HW Enabled = False
+2025-05-07 17:44:18,860 - INFO - [root] - USB connected, charging should be disabled.
+2025-05-07 17:44:18,860 - INFO - [root] - --- STEP Linear Pre-Charge: Relaxing for 0.0 hour(s) (10 seconds) ---
+2025-05-07 17:44:18,861 - INFO - [root] - Relaxation started. Ends approx. at 17:44:28
+2025-05-07 17:44:28,866 - INFO - [root] - Relaxation complete.
+2025-05-07 17:44:28,868 - INFO - [root] - DataLogger: Starting logging to test_results/_temp_0C_cycle1_linear_charge.csv every 1.0s
+2025-05-07 17:44:28,869 - INFO - [root] - --- STEP Enable Charging ---
+2025-05-07 17:44:28,870 - INFO - [root] - Enabling charger HW via relay...
+2025-05-07 17:44:28,870 - INFO - [root] - Enabling Charger HW (Pins: [2])...
+2025-05-07 17:44:28,870 - INFO - [root] - Setting multiple relays: Requesting ON=[2], Requesting OFF=[]
+2025-05-07 17:44:31,872 - ERROR - [backend.deditec_driver.deditec_1_16_on] - Deditec:: connection timed out (3s)
+2025-05-07 17:44:31,872 - ERROR - [root] - Failed to connect to Deditec at 192.168.1.10: Failed to connect to Deditec device at 192.168.1.10:9912
+2025-05-07 17:44:31,873 - INFO - [root] - Sending SW enable charging command...
+2025-05-07 17:44:31,873 - INFO - [root] - Dummy DUT: Received Enable Charging (SW)
+2025-05-07 17:44:31,873 - INFO - [root] - Dummy DUT: Notified USB Connected = True
+2025-05-07 17:44:31,873 - INFO - [root] - Dummy DUT: Notified Charger HW Enabled = True
+2025-05-07 17:44:31,873 - INFO - [root] - Charging enabled (HW relay ON, SW command sent).
+2025-05-07 17:44:31,873 - INFO - [root] - --- STEP Charge (Linear): Charging until IDLE (Current < 50 mA) ---
+2025-05-07 17:44:31,874 - INFO - [root] -   Charging...(0.0m): Mode=IDLE, I=-1.0mA, V=3.001V
+2025-05-07 17:44:31,874 - INFO - [root] - Charge end condition detected. Verifying...
+2025-05-07 17:44:36,879 - INFO - [root] - Charge termination unstable. Resetting.
+2025-05-07 17:44:56,889 - INFO - [root] - Charge end condition detected. Verifying...
+2025-05-07 17:45:01,895 - INFO - [root] -   Charging...(0.5m): Mode=IDLE, I=-0.9mA, V=4.226V
+2025-05-07 17:45:26,917 - INFO - [root] - Charge termination stable.
+2025-05-07 17:45:26,919 - INFO - [root] - Charging step complete.
+2025-05-07 17:45:26,919 - INFO - [root] - DataLogger: Stopping logging for _temp_0C_cycle1_linear_charge.csv...
+2025-05-07 17:45:26,921 - INFO - [root] - DataLogger: Logging thread stopped for _temp_0C_cycle1_linear_charge.csv.
+2025-05-07 17:45:26,921 - INFO - [root] - DataLogger: Logging stopped for _temp_0C_cycle1_linear_charge.csv.
+2025-05-07 17:45:26,922 - INFO - [root] - --- STEP Post-Linear: Relaxing for 0.0 hour(s) (10 seconds) ---
+2025-05-07 17:45:26,922 - INFO - [root] - Relaxation started. Ends approx. at 17:45:36
+2025-05-07 17:45:36,924 - INFO - [root] - Relaxation complete.
+2025-05-07 17:45:36,925 - INFO - [root] - --- Test Mode 'linear' Completed Successfully (Cycle 1, Temp 0°C) ---
+2025-05-07 17:45:36,925 - INFO - [root] - --- Storing Log File for Phase: linear_discharge ---
+2025-05-07 17:45:36,928 - INFO - [root] - Stored log file: test_results/temp_0C/cycle_1/0C_cycle1_linear_discharge.csv
+2025-05-07 17:45:36,929 - INFO - [root] - Discharge log stored as: 0C_cycle1_linear_discharge.csv
+2025-05-07 17:45:36,929 - INFO - [root] - --- Storing Log File for Phase: linear_charge ---
+2025-05-07 17:45:36,930 - INFO - [root] - Stored log file: test_results/temp_0C/cycle_1/0C_cycle1_linear_charge.csv
+2025-05-07 17:45:36,930 - INFO - [root] - Charge log stored as: 0C_cycle1_linear_charge.csv
+2025-05-07 17:45:36,930 - INFO - [root] -   -- Test Mode 'linear' finished successfully in 2.3 minutes. --
+2025-05-07 17:45:36,930 - INFO - [root] - Progress: 3/8 total runs completed.
+2025-05-07 17:45:36,930 - INFO - [root] -   -- Running Test Mode: 'switching' --
+2025-05-07 17:45:36,931 - INFO - [root] - --- Starting Test: Mode='switching', Cycle=1, Temp=0°C ---
+2025-05-07 17:45:36,931 - INFO - [root] - Verifying/Setting temperature...
+2025-05-07 17:45:36,931 - INFO - [root] - Sending Slack notification for manual action...
+2025-05-07 17:45:36,932 - INFO - [notifications] - Sending Slack notification via webhook (using payload parameter)...
+2025-05-07 17:45:37,189 - INFO - [notifications] - Slack notification request sent successfully.
+2025-05-07 17:45:37,190 - INFO - [root] - Slack notification request sent.
+2025-05-07 17:50:05,362 - INFO - [root] - Continuing test based on manual confirmation.
+2025-05-07 17:50:05,368 - INFO - [root] - --- STEP Pre-Switching: Relaxing for 0.0 hour(s) (10 seconds) ---
+2025-05-07 17:50:05,368 - INFO - [root] - Relaxation started. Ends approx. at 17:50:15
+2025-05-07 17:50:15,374 - INFO - [root] - Relaxation complete.
+2025-05-07 17:50:15,375 - INFO - [root] - Executing Switching Test Steps...
+2025-05-07 17:50:15,378 - INFO - [root] - DataLogger: Starting logging to test_results/_temp_0C_cycle1_switching_main.csv every 1.0s
+2025-05-07 17:50:15,379 - INFO - [root] - --- STEP Switching Phase: Duration=30s, Interval=10s ---
+2025-05-07 17:50:15,379 - INFO - [root] - Switching state to OFF (Command: N/A)
+2025-05-07 17:50:15,379 - INFO - [root] - Dummy DUT: Received Disable Charging (SW)
+2025-05-07 17:50:25,580 - INFO - [root] - Switching state to ON (Command: N/A)
+2025-05-07 17:50:25,581 - INFO - [root] - Dummy DUT: Received Enable Charging (SW)
+2025-05-07 17:50:35,752 - INFO - [root] - Switching state to OFF (Command: N/A)
+2025-05-07 17:50:35,752 - INFO - [root] - Dummy DUT: Received Disable Charging (SW)
+2025-05-07 17:50:45,527 - INFO - [root] - Switching phase finished. Disabling charging.
+2025-05-07 17:50:45,527 - INFO - [root] - Dummy DUT: Received Disable Charging (SW)
+2025-05-07 17:50:45,527 - INFO - [root] - Disabling Charger HW (Pins: [2])...
+2025-05-07 17:50:45,528 - INFO - [root] - Setting multiple relays: Requesting ON=[], Requesting OFF=[2]
+2025-05-07 17:50:48,530 - ERROR - [backend.deditec_driver.deditec_1_16_on] - Deditec:: connection timed out (3s)
+2025-05-07 17:50:48,532 - ERROR - [root] - Failed to connect to Deditec at 192.168.1.10: Failed to connect to Deditec device at 192.168.1.10:9912
+2025-05-07 17:50:48,532 - INFO - [root] - Dummy DUT: Notified USB Connected = True
+2025-05-07 17:50:48,532 - INFO - [root] - Dummy DUT: Notified Charger HW Enabled = False
+2025-05-07 17:50:48,532 - INFO - [root] - Switching phase complete.
+2025-05-07 17:50:48,532 - INFO - [root] - DataLogger: Stopping logging for _temp_0C_cycle1_switching_main.csv...
+2025-05-07 17:50:48,534 - INFO - [root] - DataLogger: Logging thread stopped for _temp_0C_cycle1_switching_main.csv.
+2025-05-07 17:50:48,534 - INFO - [root] - DataLogger: Logging stopped for _temp_0C_cycle1_switching_main.csv.
+2025-05-07 17:50:48,534 - INFO - [root] - --- STEP Post-Switching: Relaxing for 0.0 hour(s) (10 seconds) ---
+2025-05-07 17:50:48,534 - INFO - [root] - Relaxation started. Ends approx. at 17:50:58
+2025-05-07 17:50:58,538 - INFO - [root] - Relaxation complete.
+2025-05-07 17:50:58,539 - INFO - [root] - --- Test Mode 'switching' Completed Successfully (Cycle 1, Temp 0°C) ---
+2025-05-07 17:50:58,539 - INFO - [root] - --- Storing Log File for Phase: switching_main ---
+2025-05-07 17:50:58,540 - INFO - [root] - Stored log file: test_results/temp_0C/cycle_1/0C_cycle1_switching_main.csv
+2025-05-07 17:50:58,540 - INFO - [root] - Specific log for 'switching' stored as: 0C_cycle1_switching_main.csv
+2025-05-07 17:50:58,540 - INFO - [root] -   -- Test Mode 'switching' finished successfully in 5.4 minutes. --
+2025-05-07 17:50:58,540 - INFO - [root] - Progress: 4/8 total runs completed.
+2025-05-07 17:50:58,540 - INFO - [root] - ===== Finished all cycles for Temperature: 0°C =====
+2025-05-07 17:50:58,540 - INFO - [root] - ===== Processing Temperature: -20°C =====
+2025-05-07 17:50:58,541 - INFO - [root] - --- STEP 1: Setting Target Temperature to -20°C ---
+2025-05-07 17:50:58,541 - INFO - [root] - --- MANUAL MODE: Target temperature set to -20.0°C ---
+2025-05-07 17:50:58,541 - INFO - [root] - Target temperature set instruction sent/logged.
+2025-05-07 17:50:58,541 - INFO - [root] - --- Starting Overall Cycle 1/1 for -20°C ---
+2025-05-07 17:50:58,541 - INFO - [root] -   -- Running Test Mode: 'linear' --
+2025-05-07 17:50:58,541 - INFO - [root] - --- Starting Test: Mode='linear', Cycle=1, Temp=-20°C ---
+2025-05-07 17:50:58,541 - INFO - [root] - Verifying/Setting temperature...
+2025-05-07 17:50:58,541 - INFO - [root] - Sending Slack notification for manual action...
+2025-05-07 17:50:58,541 - INFO - [notifications] - Sending Slack notification via webhook (using payload parameter)...
+2025-05-07 17:50:58,784 - INFO - [notifications] - Slack notification request sent successfully.
+2025-05-07 17:50:58,785 - INFO - [root] - Slack notification request sent.
+2025-05-07 17:51:33,426 - WARNING - [root] - Wait for confirmation interrupted by user.
+2025-05-07 17:51:33,427 - WARNING - [root] - 
+<<<<< Test execution interrupted by user (Ctrl+C) >>>>>
+2025-05-07 17:51:33,428 - INFO - [root] - Performing final cleanup...
+2025-05-07 17:51:33,428 - INFO - [root] - Ensuring all relays are OFF...
+2025-05-07 17:51:33,428 - INFO - [root] - Turning all relays OFF.
+2025-05-07 17:51:33,429 - INFO - [root] - Setting multiple relays: Requesting ON=[], Requesting OFF=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
