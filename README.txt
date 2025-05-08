@@ -26,9 +26,6 @@ Hlavní Funkce - Verze 2.0
 *   **Kontrola Periferií:** Ověření dostupnosti relé desky a DUT controlleru při startu.
 *   **Analytické Skripty:** Nástroje (`analysis/`) pro načítání, vizualizaci a analýzu výsledných CSV dat.
 
-Struktura Projektu
-------------------
-(Zde vložte ASCII stromovou strukturu - je stejná jako v předchozí odpovědi)
 
 Struktura Projektu
 ------------------
@@ -93,6 +90,7 @@ Nastavení a Instalace
 5.  **Hardware:** Připojit relé (znát IP), DUT (znát port), komoru. Správně zapojit relé piny dle `test_config.toml`.
 6.  **Slack Webhook (Volitelné):** Pokud chcete používat Slack notifikace, vytvořte si Incoming Webhook ve vaší Slack aplikaci a vložte jeho URL do `test_config.toml`.
 
+
 Konfigurace (`test_config.toml`) - Verze 2.0
 ------------------------------------------
 *   **`[general]`**: `dut_serial_port`, `output_directory`, `log_interval_seconds`, `simulate_dut` (true/false), `fail_fast` (true/false - volitelné).
@@ -109,6 +107,7 @@ Konfigurace (`test_config.toml`) - Verze 2.0
     *   `manual_temp_mode` ("beeper", "slack", "both", "none").
     *   `slack_webhook_url` (URL pro Slack notifikace).
 *   **`[dut_commands]`**: Přesné příkazy pro vaše DUT pro všechny potřebné akce.
+
 
 Spuštění Testu
 --------------
